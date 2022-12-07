@@ -1,0 +1,34 @@
+controller
+
+LoginController.java
+--------------
+
+package com.sheryians.major.controller;
+
+import com.sheryians.major.repository.RoleRepositary;
+import com.sheryians.major.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Role;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.GetMapping;
+
+@Controller
+public class LoginController {
+   @Autowired
+   private BCryptPasswordEncoder bcryptPasswordEncoder;
+   @Autowired
+   UserRepository userRespository;
+   @autowired
+   RolesRepository roleRespository;
+
+   @GetMapping("/login")
+   public string login(){
+      return "login";
+   }
+   @GetMapping("/register")
+   public String registerGet() {
+      return "register";
+   }
+}
+
